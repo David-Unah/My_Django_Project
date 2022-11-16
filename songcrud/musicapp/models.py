@@ -14,7 +14,6 @@ class Artiste(models.Model):
 
 
 class Song(models.Model):
-    artiste = models.ForeignKey(Artiste, on_delete=models.CASCADE)
     title = models.CharField(max_length=40)
     date_released = models.DateField(default=datetime.today)
     artiste_id = models.IntegerField()
@@ -24,7 +23,6 @@ class Song(models.Model):
 
 
 class Lyrics(models.Model):
-    song = models.ForeignKey(Song, on_delete=models.CASCADE)
     content = models.CharField(max_length=400)
     song_id = models.IntegerField()
 
